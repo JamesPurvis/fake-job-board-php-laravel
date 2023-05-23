@@ -1,0 +1,125 @@
+.banner-top {
+   background-color: #f79902;
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-top: 20px;
+   padding-bottom: 0px;
+   font-size: 18px;
+   height: fit-content;
+}
+
+nav {
+    padding: 40px;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    font-size: 25px;
+}
+
+.gray-banner {
+    background-color: rgb(232, 232, 232);
+    height: 23vh;
+    font-size: 14px;
+}
+
+.login-box {
+    background-color: rgb(232, 232, 232);
+    height: fit-content;
+    width: 100%;
+    padding: 20px;
+}
+
+#loginbutton {
+    background-color: rgb(105, 161, 171);
+}
+
+.search-drop {
+    border: 1px solid rgba(105, 161, 171, 0.5);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.search-drop p {
+    color: #004b91;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.job-info {
+    background-color: rgb(232, 232, 232);
+    width: 100%;
+    height: fit-content;
+}
+
+#jobbutton {
+    background-color: rgb(105, 161, 171);
+    padding: 10px;
+}
+
+.canvas-header {
+    background-color: rgb(105, 161, 171);
+    color: white;
+    height: 15%;
+}
+
+.navigation-button {
+    border-bottom: 1px solid rgb(232, 232, 232);
+    width: 100%;
+    text-align: left;
+}
+
+.navigation-button:hover {
+    background-color: rgb(232, 232, 232);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer {
+    font-size: 11px;
+    color: rgb(110, 124, 134);
+    background-color: rgb(13, 36, 52);
+    margin-top: auto;
+  }
+
+  .links {
+    padding-top: 0;
+    padding-left: 9rem;
+  }
+
+  .links a {
+    text-decoration: underline;
+    color: rgb(110, 124, 134);
+  }
+
+  #filterbutton {
+    background-color: rgb(105, 161, 171);
+  }
+
+  .search-dropdown {
+    background-color: rgb(232, 232, 232);
+    width: auto;
+    height: fit-content;
+  }
+
+  .hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .visible {
+    display: block;
+    opacity: 0.3s;
+  }
+
