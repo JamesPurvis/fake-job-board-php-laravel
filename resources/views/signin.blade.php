@@ -20,9 +20,20 @@
         <div class="container d-flex pt-5 flex-column">
             <p id="loginheader" class="fw-semibold mb-0">Log in</p>
             <p id="logintext">This account is different from the one you use to shop on Fake.</p>
+            <form action="/submit" method="POST">
+                @csrf
             <div class="form-group">
+            @if ($errors->any())
+    <div class="alert alert-danger pb-0">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        </ul>
+    </div>
+@endif
                 <p>Email or mobile number</p>
-                <input type="text" class="form-control" id="loginid" name="logindetails"/>
+                <input type="text" class="form-control" id="loginid" name="loginid"/>
             </div>
             <div class="container-fluid d-flex flex-row pt-3">
                 <p class="pe-4">No account?</p>
@@ -35,6 +46,7 @@
                 <p class="fw-semibold pe-2">Looking for your Fake Stores jobs account?<p>
                     <a href="#">Sign in here</a>
             </div>
+             </form>
         </div>
     </div>
         <div class="container-fluid d-flex flex-row footer min-vh-100">

@@ -23,10 +23,11 @@
             <i id="backbuton" class="ms-4 fas fa-arrow-left pb-5"><a id="backbutton">back</a></i>
             <div class="form-group">
                 <h5 class="pb-3">Enter your personal pin</h5>
-                <input type="text" class="form-control" id="loginid" name="logindetails"/>
+                <input type="text" class="form-control" id="pin" name="pin"/>
             </div>
             <div class="container-fluid d-flex flex-row pt-3">
                 <input class="form-check-input" type="checkbox" id="warehouse" name="warehousecheck" value="1">
+                <input type="text" class="form-control d-none" id="logindetails" value="{{Session::get('login_id') }}" name="logindetails" />
                 <p class="pe-4">Show your personal pin</p>
             </div>
             <div class="container-fluid d-flex flex-column">

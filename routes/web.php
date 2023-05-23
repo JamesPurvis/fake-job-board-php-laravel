@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/signin', function () {
-    return view('signin');
-})->name('signin');
+Route::get('/', 'App\Http\Controllers\HomeController@index');
+Route::get('/signin', 'App\Http\Controllers\LoginController@index')->name('signin');
+Route::post('/submit', 'App\Http\Controllers\LoginController@submit');
+Route::get('/verify', 'App\Http\Controllers\LoginController@verify')->name('verify');
