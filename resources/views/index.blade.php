@@ -118,35 +118,23 @@
                     <div class="container d-flex flex-column ps-0 ms-0 pb-3">
                         <button id="filterbutton" class="btn btn-primary w-50">Filter</button>
                     </div>
-                </div>
-                <div class="container d-flex flex-column job-info p-3">
-                    <h6>Seasonal Warehouse Team Member</h6>
-                    <p>
-                        Calgary, AB Canada
+                    </div>  
 
-Job ID: 220082432
-Seasonal Warehouse Team MembersShifts: Overnight, Early Morning, Day, Evening, WeekendLocation:Calgary, ABJob opportunities vary by location. We update postings daily with open positions.Hourly pay rate:Earn $19.50 to $21.50Immediate openings available no... more
+                    @foreach($jobs as $job)
+                <div class="container d-flex flex-column job-info p-3">
+                    <h6>{{ $job->job_title }}</h6>
+                    <p>Job ID: {{ $job->job_id}}</p>
+                    <p>Location: {{$job->job_location}}
+                    <p>{{ $job->job_description}}</p>
                     </p>
                     <div class="container d-flex flex-row justify-content-end align-content-end">
                         <button id="jobbutton" class="btn btn-primary">Apply now</button>
                     </div>
                 </div>
-                <div class="container d-flex flex-column job-info p-3">
-                    <h6>Seasonal Warehouse Team Member</h6>
-                    <p>
-                        Calgary, AB Canada
-
-Job ID: 220082432
-Seasonal Warehouse Team MembersShifts: Overnight, Early Morning, Day, Evening, WeekendLocation:Calgary, ABJob opportunities vary by location. We update postings daily with open positions.Hourly pay rate:Earn $19.50 to $21.50Immediate openings available no... more
-                    </p>
-                    <div class="container d-flex flex-row justify-content-end align-content-end">
-                        <button id="jobbutton" class="btn btn-primary">Apply now</button>
-                    </div>
-                </div>
-            </div>
-            </div>
+        @endforeach
         </div>
-
+</div>
+</div>
 
             <div class="container-fluid d-flex flex-row footer justify-content-center p-2 mt-5">
                 <div class="ms-5 ps-5 container d-flex p-2">
