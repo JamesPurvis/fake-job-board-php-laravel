@@ -23,7 +23,7 @@ class LoginController extends Controller
        $login_id = $request->input('loginid');
 
        if (!strstr($login_id, "@")) {
-         $login_id = str_replace(['-', '(', ' '], '', $login_id);
+         $login_id = str_replace(['-', '(', ')', ' '], '', $login_id);
        }
 
        if (User::where('email_address', $login_id)->exists() || User::where('phone_number', $login_id)->exists()) {
