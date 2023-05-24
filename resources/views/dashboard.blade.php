@@ -20,7 +20,7 @@
     </nav>
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasDash" aria-labelledby="offcanvasDashLabel">
         <div class="container-fluid d-flex canvas-header justify-content-between">
-            <h4 class="text-center align-self-end">Welcome Back</h4>
+            <h4 class="text-center align-self-end">Welcome Back, {{Session::get('login_id') }}</h4>
             <button type="button" class="btn-close text-reset p-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
     </div>

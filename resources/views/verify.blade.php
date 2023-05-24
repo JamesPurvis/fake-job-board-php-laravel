@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/custom2.css"/>
     <link rel="stylesheet" href="css/custom3.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Job Board ~ Pin check</title>
+    <title>Job Board ~ Verify your personal pin</title>
 </head>
 <body>
     <nav class="navbar bg-white navbar-light">
@@ -21,20 +21,32 @@
     <div class="mt-2 container-fluid d-flex blue-bg justify-content-center align-content-center pb-3">
         <div class="container d-flex pt-5 flex-column">
             <i id="backbuton" class="ms-4 fas fa-arrow-left pb-5"><a id="backbutton">back</a></i>
+            <form action="/authenticate" method="POST">
+            @csrf
             <div class="form-group">
+            @if ($errors->any())
+    <div class="alert alert-danger pb-0">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        </ul>
+    </div>
+@endif
                 <h5 class="pb-3">Enter your personal pin</h5>
                 <input type="text" class="form-control" id="pin" name="pin"/>
             </div>
             <div class="container-fluid d-flex flex-row pt-3">
                 <input class="form-check-input" type="checkbox" id="warehouse" name="warehousecheck" value="1">
-                <input type="text" class="form-control d-none" id="logindetails" value="{{Session::get('login_id') }}" name="logindetails" />
                 <p class="pe-4">Show your personal pin</p>
             </div>
             <div class="container-fluid d-flex flex-column">
                 <a class="pb-3" href="#"">Forgot your personal pin?</a>
                 <a class="pb-3" href="#">Need help to login?</a>
             </div>
-            <button class="btn btn-primary w-100 rounded-pill">Next</button>
+
+            <button type="submit" class="btn btn-primary w-100 rounded-pill">Next</button>
+           </form>
         </div>
     </div>
         <div class="container-fluid d-flex flex-row footer min-vh-100">
