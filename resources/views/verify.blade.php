@@ -20,19 +20,12 @@
     </nav>
     <div class="mt-2 container-fluid d-flex blue-bg justify-content-center align-content-center pb-3">
         <div class="container d-flex pt-5 flex-column">
-            <i id="backbuton" class="ms-4 fas fa-arrow-left pb-5"><a id="backbutton">back</a></i>
+        <div class="container d-flex flex-row">
+            <a href="{{ route('signin') }}" class="pb-3 fas fa-arrow-left text-decoration-none">back</a>
+        </div>
             <form action="/authenticate" method="POST">
             @csrf
             <div class="form-group">
-            @if ($errors->any())
-    <div class="alert alert-danger pb-0">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <p>{{ $error }}</p>
-            @endforeach
-        </ul>
-    </div>
-@endif
                 <h5 class="pb-3">Enter your personal pin</h5>
                 <input type="text" class="form-control" id="pin" name="pin"/>
             </div>
