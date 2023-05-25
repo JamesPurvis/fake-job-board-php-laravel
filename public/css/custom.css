@@ -88,8 +88,9 @@ body {
   .footer {
     font-size: 11px;
     color: rgb(110, 124, 134);
-    background-color: rgb(13, 36, 52);
+    background-color: #0d2434;
     margin-top: auto;
+    height: fit-content;
   }
 
   .links {
@@ -121,5 +122,9 @@ body {
   .visible {
     display: block;
     opacity: 0.3s;
+  }
+
+  #applybutton {
+    background-color: rgb(105, 161, 171);
   }
 

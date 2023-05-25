@@ -18,7 +18,7 @@
               </button>
         </div>
     </nav>
-    <div class="offcanvas offcanvas-start w-50" tabindex="-1" id="offcanvasDash" aria-labelledby="offcanvasDashLabel">
+    <div class="offcanvas offcanvas-start w-50 " tabindex="-1" id="offcanvasDash" aria-labelledby="offcanvasDashLabel">
         <div class="container-fluid d-flex canvas-header justify-content-between header">
             <h4 class="text-center justify-content-center pt-3 ms-3">Fake Jobs</h4>
             <button type="button" class="btn-close text-reset pt-3" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="container d-flex flex-column button p-3">
-                <a class="fw-semibold text-decoration-none ms-3 me-0 mb-0 mt-0 link-black">
+                <a class="fw-semibold text-decoration-none ms-3 me-0 mb-0 mt-0 link-black" data-bs-dismiss="offcanvas" aria-label="Close">
                     My jobs</a>
             </div>
             <div class="container d-flex justify-content-end pt-3">

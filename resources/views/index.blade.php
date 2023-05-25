@@ -29,28 +29,28 @@
                 <button type="button" class="btn-close text-reset p-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="container d-flex flex-column p-0 m-0">
-                <ul class="p-0 m-0">
-                    <li>
-                        <button class="btn navigation-button p-3">
-                            <i class="fas fa-home pe-2"></i><span>Home</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button class="btn navigation-button p-3">
-                            <i class="fas fa-sign-in-alt pe-2"></i><span>Sign in</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button class="btn navigation-button p-3">
-                            <i class="fas fa-briefcase pe-2"></i><span>Conversion Associate Portal</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button class="btn navigation-button p-3">
-                            <i class="fas fa-language pe-2"></i><span>Language</span>
-                        </button>
-                    </li>
-                </ul>
+            <ul class="p-0 m-0">
+    <li>
+        <a href="{{ route('home') }}" class="btn navigation-button p-3">
+            <i class="fas fa-home pe-2"></i><span>Home</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{ route('signin') }}" class="btn navigation-button p-3">
+            <i class="fas fa-sign-in-alt pe-2"></i><span>Sign in</span>
+        </a>
+    </li>
+    <li>
+        <a href="" class="btn navigation-button p-3">
+            <i class="fas fa-briefcase pe-2"></i><span>Conversion Associate Portal</span>
+        </a>
+    </li>
+    <li>
+        <a href="" class="btn navigation-button p-3">
+            <i class="fas fa-language pe-2"></i><span>Language</span>
+        </a>
+    </li>
+</ul>
             </div>
         </div>
         
@@ -122,16 +122,18 @@
 
                     @foreach($jobs as $job)
                 <div class="container d-flex flex-column job-info p-3">
-                    <h6>{{ $job->job_title }}</h6>
+                    <h6><a href="{{ route('job', ['job_id' => $job->job_id]) }}" class="text-decoration-none">{{ $job->job_title }}</h6></a>
                     <p>Job ID: {{ $job->job_id}}</p>
                     <p>Location: {{$job->job_location}}
-                    <p>{{ $job->job_description}}</p>
+                    <p>{{ Illuminate\Support\Str::limit(strip_tags($job->job_description), 300) }}</p><a href="{{ route('job', ['job_id' => $job-> job_id]) }}">Read more</a>
                     </p>
                     <div class="container d-flex flex-row justify-content-end align-content-end">
-                        <button id="jobbutton" class="btn btn-primary">Apply now</button>
+                        <a href="{{ route('job', ['job_id' => $job->job_id]) }}"  id="jobbutton" class="btn btn-primary">Apply now</a>
                     </div>
                 </div>
         @endforeach
+
+        {{$jobs->links()}}
         </div>
 </div>
 </div>

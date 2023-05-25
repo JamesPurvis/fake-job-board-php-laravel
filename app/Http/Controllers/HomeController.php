@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $jobs = Job::all();
+        $jobs = Job::paginate(1);
         return view('index')->with('jobs', $jobs);
     }
 }

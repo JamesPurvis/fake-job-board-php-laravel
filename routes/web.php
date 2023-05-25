@@ -21,3 +21,5 @@ Route::get('/verify', 'App\Http\Controllers\LoginController@verify')->name('veri
 Route::post('/authenticate', 'App\Http\Controllers\AuthenticateController@auth')->name('authenticate');
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 Route::get('/logout', 'App\Http\Controllers\DashboardController@logout')->name('logout');
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
+Route::get('/jobs/{job_id}', 'App\Http\Controllers\JobRouteController@showJob')->name('job');
