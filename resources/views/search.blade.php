@@ -88,14 +88,12 @@
                         <div class="col-6">
                             <p class="pt-3 fw-bold">Job Title</p>
                             <div class="container p-0 d-flex flex-column">
-                            <form action="{{ route('search.results') }}" method="POST">
-                                @csrf
                                 <div class="form-check form-check-inline pb-4">
-                                    <input class="form-check-input" type="checkbox" id="warehouse" name="warehouse" value="1">
+                                    <input class="form-check-input" type="checkbox" id="warehouse" name="warehousecheck" value="1">
                                     <label class="form-check-label" for="warehouse">Fulfillment Center</label>
                                   </div>
                                   <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="cs" name="cs" value="1">
+                                    <input class="form-check-input" type="checkbox" id="cs" name="cscheck" value="1">
                                     <label class="form-check-label" for="cs">Customer Service</label>
                                   </div>
                             </div>
@@ -104,36 +102,25 @@
                             <p class="pt-3 fw-bold">Location</p>
                             <div class="form-group pb-5">
                                 <label>Country</label>
-                                <select id="country" name="country" class="form-control">
-                                <option value="">Please choose a country</option>
-                                <option value="United States">United States</option>
-                                <option value="United Kingdom">United Kingdom</option>
-                                <option value="Netherlands">The Netherlands</option>
-                                </select>
+                                <input type="text" id="country" name="country" class="form-control" placeholder="Please choose a country">
                                 </div>
                                 <div class="form-group pb-5">
                                 <label>State</label>
-                                <select id="state" name="state" class="form-control">
-                                <option value="">Please choose a state</option>
-                                <option value="Colorado">Colorado</option>
-                                <option value="Texas">Texas</option>
-                                <option value="Mississippi">Missisippi</option>
-                                </select>
+                                <input type="text" id="state" name="state" class="form-control" placeholder="Please choose a state">
                                 </div>
                                 <div class="form-group pb-5">
                                 <label>City</label>
-                                <input type="text" id="city" name="city" class="form-control" placeholder="Please choose a city">
+                                <input type="text" id="state" name="state" class="form-control" placeholder="Please choose a city">
                                 <p class="fw-lighter pt-2">Multiple cities can be entered [use comma separator].</p>
                                 </div>
                         </div>
                     </div>
                     <div class="container d-flex flex-column ps-0 ms-0 pb-3">
-                        <button type="submit" id="filterbutton" class="btn btn-primary w-50">Filter</button>
-                    </form>
+                        <button id="filterbutton" class="btn btn-primary w-50">Filter</button>
                     </div>
                     </div>  
 
-                    @foreach($jobs as $job)
+                    @foreach($job_results as $job)
                 <div class="container d-flex flex-column job-info p-3">
                     <h6><a href="{{ route('job', ['job_id' => $job->job_id]) }}" class="text-decoration-none">{{ $job->job_title }}</h6></a>
                     <p>Job ID: {{ $job->job_id}}</p>
@@ -146,7 +133,6 @@
                 </div>
         @endforeach
 
-        {{$jobs->links()}}
         </div>
 </div>
 </div>
