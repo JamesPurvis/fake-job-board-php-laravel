@@ -89,11 +89,13 @@
                             <p class="pt-3 fw-bold">Job Title</p>
                             <div class="container p-0 d-flex flex-column">
                                 <div class="form-check form-check-inline pb-4">
-                                    <input class="form-check-input" type="checkbox" id="warehouse" name="warehousecheck" value="1">
+                                <form action="{{ route('search.results') }}" method="POST">
+                                @csrf
+                                    <input class="form-check-input" type="checkbox" id="warehouse" name="warehouse" value="1">
                                     <label class="form-check-label" for="warehouse">Fulfillment Center</label>
                                   </div>
                                   <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="cs" name="cscheck" value="1">
+                                    <input class="form-check-input" type="checkbox" id="cs" name="cs" value="1">
                                     <label class="form-check-label" for="cs">Customer Service</label>
                                   </div>
                             </div>
@@ -110,13 +112,14 @@
                                 </div>
                                 <div class="form-group pb-5">
                                 <label>City</label>
-                                <input type="text" id="state" name="state" class="form-control" placeholder="Please choose a city">
+                                <input type="text" id="city" name="state" class="form-control" placeholder="Please choose a city">
                                 <p class="fw-lighter pt-2">Multiple cities can be entered [use comma separator].</p>
                                 </div>
                         </div>
                     </div>
                     <div class="container d-flex flex-column ps-0 ms-0 pb-3">
                         <button id="filterbutton" class="btn btn-primary w-50">Filter</button>
+                     </form>
                     </div>
                     </div>  
 
