@@ -41,3 +41,29 @@
 #signout:hover {
     border: 4px solid rgb(23, 104, 201);
 }
+
+.dashboard-block {
+    width: 100%;
+    height: fit-content;
+}
+
+.panel-select {
+    color: rgb(23, 104, 201);
+
+}
+
+.active-line {
+    background-color: rgb(23, 104, 201);
+    height: 4px;
+    display: inline;
+    padding-right: 5px;
+}
+
+#searchjobs {
+    background-color: rgb(255, 255, 255);
+    color: rgb(23, 104, 201);
+}
+
+
+
+

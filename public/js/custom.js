@@ -1,3 +1,6 @@
+updateLineWidth();
+window.addEventListener('resize', updateLineWidth);
+
 function showSearch() {
     var searchDiv = document.getElementById("search");
     var arrow = document.getElementById("arrow");

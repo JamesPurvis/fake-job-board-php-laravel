@@ -24,3 +24,4 @@ Route::get('/logout', 'App\Http\Controllers\DashboardController@logout')->name('
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/jobs/{job_id}', 'App\Http\Controllers\JobRouteController@showJob')->name('job');
 Route::post('/search/results', 'App\Http\Controllers\HomeController@search')->name("search.results");
+Route::get('/search/results', 'App\Http\Controllers\HomeController@index');
