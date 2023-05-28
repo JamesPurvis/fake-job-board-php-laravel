@@ -25,3 +25,5 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/jobs/{job_id}', 'App\Http\Controllers\JobRouteController@showJob')->name('job');
 Route::post('/search/results', 'App\Http\Controllers\HomeController@search')->name("search.results");
 Route::get('/search/results', 'App\Http\Controllers\HomeController@index');
+Route::post('/job/search/', 'App\Http\Controllers\InternalJobController@search')->name('internal.results');
+Route::post('/location/update', 'App\Http\Controllers\LocationController@update')->name('location.update');

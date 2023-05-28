@@ -23,13 +23,10 @@
               </div>
         </div>
     </nav>
-    <form method="POST" action="{{ route('internal.results') }}">
-        @csrf
     <div  id="searchdash" class="container-fluid d-flex flex-row search-div pt-4 pb-3 hidden">
         <input type="text" class="form-control" placeholder="Search jobs" name="search" id="search"/>
         <input type="text" class="form-control" placeholder="Zipcode" name="zip" ip="zip"/>
-        <button type="submit" class="ps-2 btn btn-primary">Search</button>
-        </form>    
+        <button class="ps-2 btn btn-primary">Search</button>
 </div>
     <div class="offcanvas offcanvas-start w-50 " tabindex="-1" id="offcanvasDash" aria-labelledby="offcanvasDashLabel">
         <div class="container-fluid d-flex canvas-header justify-content-between header">
@@ -51,28 +48,13 @@
                 <a href="{{ route('logout') }}" id="signout" class="btn btn-primary rounded-pill justify-content-end align-content-end">Sign out</a>
              </div>
     </div>
-    <div id="jobscontainer" class="container-fluid d-flex flex-column dashboard-block">
-        <p class="pt-4 ms-3 fw-lighter fw-">My Jobs</p>
-        <div class="container-fluid pt-3 d-flex flex-row panel-select">
-        <p id="active" class="pe-5">Active</p>
-        <p id="recommended" class="pe-5">Recommended</p>
-        </div>
-    </div>
-    <div id="nojobs" class="mt-2 container-fluid d-flex flex-column blue-bg justify-content-center align-content-center">
-        <h4 class="pt-5 text-center">You have no active job appllications</h4>
-        <p class="pt-2 fw-light text-center">Start an application to see your active applications.</p>
-        <div class="container-fluid d-flex justify-content-center">
-        <i class="fas fa-smile fa-10x" style="color: rgb(23, 104, 201);"></i>
-        </div>
-        <div class="container-fluid d-flex justify-content-center pt-3">
-        <button id="searchjobs" class="btn btn-primary rounded-pill align-self-center">Search all jobs</button>
+    <div class="mt-2 container-fluid d-flex flex-column blue-bg justify-content-center align-content-center">
         </div>
 </div>
 
 <div class="container-fluid d-flex flex-row footer">
             <p>test</p>
         </div>
-
 
         <script>
                 var $locationRoute = @json(route('location.update'));

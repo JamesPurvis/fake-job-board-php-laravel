@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Job Board ~ Index</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}"/>
@@ -170,6 +171,12 @@
                 </p>
                 </div>
             </div>
+
+
+            <script>
+                var $locationRoute = @json(route('location.update'));
+                var csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+            </script>
 
     <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
