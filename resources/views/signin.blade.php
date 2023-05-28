@@ -16,7 +16,7 @@
               </button>
         </div>
     </nav>
-    <div class="mt-2 container-fluid d-flex blue-bg justify-content-center align-content-center">
+    <div class="mt-2 pt-5 container-fluid d-flex blue-bg justify-content-center align-content-center">
         <div class="container d-flex pt-5 flex-column">
             <p id="loginheader" class="fw-semibold mb-0">Log in</p>
             <p id="logintext">This account is different from the one you use to shop on Fake.</p>
@@ -49,7 +49,8 @@
              </form>
         </div>
     </div>
-        <div class="container-fluid d-flex flex-row footer min-vh-100">
+        <div class="container-fluid d-flex flex-row footer">
+            <p>test</p>
         </div>
 </body>
 </html>

@@ -18,7 +18,7 @@
               </button>
         </div>
     </nav>
-    <div class="mt-2 container-fluid d-flex blue-bg justify-content-center align-content-center pb-3">
+    <div class="mt-2 pt-5 container-fluid d-flex blue-bg justify-content-center align-content-center pb-3">
         <div class="container d-flex pt-5 flex-column">
         <div class="container d-flex flex-row">
             <a href="{{ route('signin') }}" class="pb-3 fas fa-arrow-left text-decoration-none">back</a>
@@ -42,7 +42,7 @@
            </form>
         </div>
     </div>
-        <div class="container-fluid d-flex flex-row footer min-vh-100">
+        <div class="container-fluid d-flex flex-row footer">
         </div>
 </body>
 </html>

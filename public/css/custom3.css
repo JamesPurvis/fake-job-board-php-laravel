@@ -45,6 +45,7 @@
 .dashboard-block {
     width: 100%;
     height: fit-content;
+    background-color: rgb(255, 255, 255);
 }
 
 .panel-select {
@@ -63,6 +64,24 @@
     background-color: rgb(255, 255, 255);
     color: rgb(23, 104, 201);
 }
+
+.search-div {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.hidden {
+    display: none !important;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .visible {
+    display: flex;
+    opacity: 0.3s;
+  }
+
+
 
 
 

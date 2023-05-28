@@ -1,5 +1,4 @@
-updateLineWidth();
-window.addEventListener('resize', updateLineWidth);
+
 
 function showSearch() {
     var searchDiv = document.getElementById("search");
@@ -15,5 +14,17 @@ function showSearch() {
         searchDiv.classList.add("hidden");
         arrow.className = "fas fa-arrow-right pe-2";
     }
+}
 
+function showSearchDash() {
+    var searchDiv = document.getElementById("searchdash");
+
+    if (searchDiv.classList.contains("hidden")) {
+        searchDiv.classList.remove("hidden");
+        searchDiv.classList.add("visible");
+    }
+    else {
+        searchDiv.classList.remove("visible");
+        searchDiv.classList.add("hidden");
+    }
 }
