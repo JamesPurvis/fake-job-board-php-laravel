@@ -48,37 +48,40 @@
                 <a href="{{ route('logout') }}" id="signout" class="btn btn-primary rounded-pill justify-content-end align-content-end">Sign out</a>
              </div>
     </div>
-    <div class="mt-2 container-fluid d-flex flex-column blue-bg justify-content-center align-content-center">
-        <h4>Total {{ count($job_list) }} jobs have been found</h4>
-          @foreach($job_list as $job)
-          <div class="container-fluid job-container p-3 ">
-            @php
+    <div class="mt-2 container-fluid d-flex flex-column blue-bg ">
+        <div class="container-fluid d-flex p-2">
+            <h4>{{count($job_list)}} jobs have been found</h4>
+        </div>
+        @foreach($job_list as $job)
+        @php
             $shifts = DB::table('job_shifts')->where('job_id', $job->job_id)->get();
             $shifts_total = $shifts->sum('shift_amount');
-            @endphp
-            <div class="row text-center">
-                <div class="col-auto text-center align-self-center pe-5">
-                <i class="fas fa-warehouse fa-2x align-self-center" style="color: rgb(23, 104, 201);"></i>
-                 </div>
-                 <div class="col-auto text-center align-self-center">
-                    <div class="container d-flex flex-column">
-                        <p class="mb-0">{{$job->job_title}}</p>
-                        <p class="mb-0">Type: {{$job->job_e_type}}</p>
-                        <p class="mb-0">Duration: {{$job->job_duration}}</p>
-                        <p class="mb-0">Pay rate: {{$job->job_rate}}</p>
-                    </div>
-                 </div>
-                 <div class="col-auto ms-auto">
-                    <p>{{$shifts_total}} shifts are avaliable!</p>
-                  </div>
-             </div>
-           </div>
-           <br>
-           @endforeach
+        @endphp
+        <div class="container-fluid bg-white h-25 p-3">
+  <div class="row">
+    <div class="col-1 d-flex align-items-center justify-content-center p-0">
+        <div class="img-container">
+        <i class="fas fa-warehouse fa-3x" style="color: rgb(23, 104, 201);"></i>
+      </div>
+    </div>
+    <div class="ps-3 col-auto d-flex flex-column pt-0 pb-0 pe-0">
+      <p id="job-title" class="mb-1">{{$job->job_title}}</p>
+      <p id="job-type" class="mb-1">Type: {{$job->job_e_type}}</p>
+      <p id="job-duration" class="mb-1">Duration: {{$job->job_duration}}</p>
+      <p id="job-rate" class="mb-1">Payrate: ${{$job->job_rate}}.00</p>
+    </div>
+    <div class="ps-3 col d-flex align-items-start pt-0 pb-0 pe-0">
+      <p class="bg-blue">{{$shifts_total}} Shifts Available</p>
+    </div>
+  </div>
+</div>
+<br>
+@endforeach
 </div>
 
+
 <div class="container-fluid d-flex flex-row footer">
-            <p>test</p>
+            <p>Test</p>
         </div>
 
         <script>
