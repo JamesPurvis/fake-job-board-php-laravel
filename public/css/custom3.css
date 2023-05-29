@@ -81,7 +81,17 @@
     opacity: 0.3s;
   }
 
+.job-container {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: fit-content;
+    border: 1px solid black;
+}
 
+.image-holder {
+    width: 100%;
+    height: fit-content;
+}
 
 
 

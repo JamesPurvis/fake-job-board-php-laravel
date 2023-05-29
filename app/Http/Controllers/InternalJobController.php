@@ -20,15 +20,19 @@ class InternalJobController extends Controller
        $coords = $this->getLatLngFromZip($request->input('zip'));
        $jobs = Job::all();
        $joblist = [];
+       $shiftList = [];
 
        foreach($jobs as $job) {
          $coords2 = $this->getLatLngFromCityState($job->job_city, $job->job_state);
          $distance = $this->haversineDistance($coords['latitude'], $coords['longitude'], $coords2['latitude'], $coords2['longitude']);
+         $job_id = $job->job_id;
 
          if ($distance <= 20) {
-            $joblist[] = $job->job_id;
+            $joblist[] = $job;
          }
-       }
+         
+        }
+
 
     
 
@@ -37,7 +41,7 @@ class InternalJobController extends Controller
 
     public function getLatLngFromZip($zipCode)
     {
-    $apiKey = 'ba31785d75004ae09b724420cab5cabb'; 
+    $apiKey = config('opencageapi.api_key');
     $apiUrl = 'https://api.opencagedata.com/geocode/v1/json?';
 
     $client = new Client();
@@ -61,7 +65,7 @@ class InternalJobController extends Controller
 }
 
 public function getLatLngFromCityState($city, $state) {
-    $apiKey = 'ba31785d75004ae09b724420cab5cabb';
+    $apiKey = config('opencageapi.api_key');
     $encodedCity = urlencode($city);
     $encodedState = urlencode($state);
 

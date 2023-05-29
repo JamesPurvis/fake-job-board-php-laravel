@@ -49,7 +49,32 @@
              </div>
     </div>
     <div class="mt-2 container-fluid d-flex flex-column blue-bg justify-content-center align-content-center">
-        </div>
+        <h4>Total {{ count($job_list) }} jobs have been found</h4>
+          @foreach($job_list as $job)
+          <div class="container-fluid job-container p-3 ">
+            @php
+            $shifts = DB::table('job_shifts')->where('job_id', $job->job_id)->get();
+            $shifts_total = $shifts->sum('shift_amount');
+            @endphp
+            <div class="row text-center">
+                <div class="col-auto text-center align-self-center pe-5">
+                <i class="fas fa-warehouse fa-2x align-self-center" style="color: rgb(23, 104, 201);"></i>
+                 </div>
+                 <div class="col-auto text-center align-self-center">
+                    <div class="container d-flex flex-column">
+                        <p class="mb-0">{{$job->job_title}}</p>
+                        <p class="mb-0">Type: {{$job->job_e_type}}</p>
+                        <p class="mb-0">Duration: {{$job->job_duration}}</p>
+                        <p class="mb-0">Pay rate: {{$job->job_rate}}</p>
+                    </div>
+                 </div>
+                 <div class="col-auto ms-auto">
+                    <p>{{$shifts_total}} shifts are avaliable!</p>
+                  </div>
+             </div>
+           </div>
+           <br>
+           @endforeach
 </div>
 
 <div class="container-fluid d-flex flex-row footer">

@@ -17,3 +17,8 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+config/opencageapi.php
+public/.DS_Store
+database/.DS_Store
+.DS_Store
+.DS_Store

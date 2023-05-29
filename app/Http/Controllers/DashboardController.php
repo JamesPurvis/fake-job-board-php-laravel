@@ -21,6 +21,10 @@ class DashboardController extends Controller
             $user = User::where('phone_number', $login_id)->first();
         }
 
+
+        Session::put('first_name', $user->first_name);
+        Session::put('last_name', $user->last_name);
+        
         return view('dashboard');
     }
 
